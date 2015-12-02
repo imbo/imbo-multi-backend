@@ -1,7 +1,9 @@
 <?php
 namespace Imbo\MultiBackend;
 
-use Imbo\Exception\StorageException,
+use Imbo\Storage\StorageInterface,
+    Imbo\Exception\StorageException,
+    InvalidArgumentException,
     Exception;
 
 /**
@@ -30,7 +32,7 @@ class MultiStorage implements StorageInterface {
         }
 
         foreach ($params['backends'] as $backend) {
-            if ($backend instanceof StorageInterface) {
+            if (!($backend instanceof StorageInterface)) {
                 throw new InvalidArgumentException(
                     'All backends must implement `Imbo\Storage\StorageInterface`'
                 );
