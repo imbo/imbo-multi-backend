@@ -1,0 +1,31 @@
+{
+    "name": "imbo/imbo-multi-backend",
+    "description": "Use multiple database/storage backends for Imbo",
+    "keywords": [ "imbo", "multiple", "backend", "storage", "database" ],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Espen Hovlandsdal",
+            "email": "espen@hovlandsdal.com"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/imbo/imbo-multi-backend",
+        "irc": "irc://irc.freenode.net/imbo"
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.com:imbo/imbo-multi-backend.git"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Imbo\\MultiBackend\\": "library/"
+        }
+    }
+}

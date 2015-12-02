@@ -1,0 +1,14 @@
+<?php
+namespace Imbo\MultiBackend;
+
+use Imbo\Storage\GridFS,
+    Imbo\Storage\Filesystem;
+
+return [
+    'storage' => new MultiStorage([
+        'backends' => [
+            new GridFS([ 'databaseName' => 'imbo_storage' ]),
+            new Filesystem([ 'dataDir' => '/var/imbo/files' ])
+        ]
+    ])
+];
